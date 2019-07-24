@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2017 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<!--
+This XML file declares which signature|privileged permissions should be granted to privileged
+applications on GMS or Google-branded devices.
+It allows additional grants on top of privapp-permissions-platform.xml
+-->
+<permissions>
+ 
+ <privapp-permissions package="com.vcast.mediamanager">
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+ </privapp-permissions>
+
+ <privapp-permissions package="com.LogiaGroup.LogiaDeck">
+    <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <permission name="android.permission.READ_PHONE_STATE"/>
+    <permission name="android.permission.INSTALL_PACKAGES"/>
+    <permission name="android.permission.BROADCAST_PACKAGE_REMOVED"/>
+    <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+    <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
+    <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  </privapp-permissions>
+
+  <privapp-permissions package="com.securityandprivacy.android.verizon.vms">
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+  </privapp-permissions>
+
+  <privapp-permissions package="com.telecomsys.directedsms.android.SCG">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.LOCATION_HARDWARE"/>
+  </privapp-permissions>
+
+  <privapp-permissions package="com.verizon.mips.services">
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.CLEAR_APP_CACHE"/>
+        <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.DUMP"/>
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.READ_FRAME_BUFFER"/>
+        <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.RECEIVE_DATA_ACTIVITY_CHANGE"/>
+        <permission name="android.permission.SET_TIME"/>
+        <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="com.verizon.settings.permission.RECEIVE_UPDATED_SETTING"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.vzw.hss.myverizon">
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.CLEAR_APP_CACHE"/>
+        <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.RECEIVE_DATA_ACTIVITY_CHANGE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="com.verizon.settings.permission.RECEIVE_UPDATED_SETTING"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.borqs.carrier">
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+    </privapp-permissions>
+
+    <library name="com.vzw.apnlib"
+            file="/system/priv-app/VZWAPNLib/VZWAPNLib.apk"/>
+
+    <privapp-permissions package="com.customermobile.preload.vzw">
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.MASTER_CLEAR"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.SET_ALWAYS_FINISH"/>
+        <permission name="android.permission.SET_TIME"/>
+        <permission name="android.permission.SET_TIME_ZONE"/>
+        <permission name="android.permission.SIGNAL_PERSISTENT_PROCESSES"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+
+  <!--  permissiions for OBDM -->
+    <permission name="com.qualcomm.permission.QCOM_DIAG" >
+        <group gid="oem_2901" />
+        <group gid="diag" />
+    </permission>
+    <permission name="com.qualcomm.permission.QCOM_RADIO" >
+        <group gid="radio" />
+    </permission>
+    <permission name="com.qualcomm.permission.QCOM_AUDIO" >
+        <group gid="audio" />
+    </permission>
+
+    <privapp-permissions package="com.verizon.obdm">
+        <permission name="android.permission.READ_LOGS"/>
+    </privapp-permissions>
+
+
+    <privapp-permissions package="com.verizon.messaging.vzmsgs">
+        <permission name="android.permission.DUMP"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+    </privapp-permissions>
+
+    <!-- This is the standard set of telephony features for a LTE phone. -->
+     <feature name="com.verizon.hardware.telephony.lte"/>
+
+
+<!-- permissions for other  borqs inbuilt priv apps -->
+
+    <privapp-permissions package="com.borqs.carrier">
+        <permission name="android.permission.MASTER_CLEAR"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.borqs.setupwizard">
+        <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.borqs.verizon.activationui">
+        <permission name="android.permission.REBOOT"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.ts.vdmclient">
+        <permission name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
+        <permission name="android.permission.RECOVERY"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.discoveryscreen">
+        <permission name="android.permission.STOP_APP_SWITCHES"/>
+    </privapp-permissions>
+
+</permissions>

@@ -1,0 +1,2 @@
+on post-fs-data
+    mkdir /persist/apn_info 0777 radio radio

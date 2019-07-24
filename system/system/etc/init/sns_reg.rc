@@ -1,0 +1,14 @@
+service update_sns_reg /system/bin/deviceftm update_sns_reg
+    class core
+    user root
+    oneshot
+
+service set_hw_ver /system/bin/deviceftm hw_ver
+    class core
+    user root
+    oneshot
+
+service set_hw_pcbid /system/bin/deviceftm hw_pcbid
+    class core
+    user root
+    oneshot

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preconfig>
+  <item>com.example.jaden.avcplayer</item>
+  <item>com.cloudminds.stereocamera</item>
+  <item>com.leia.camera</item>
+  <item>com.lucid.demoapp</item>
+  <item>com.lucid.capture</item>
+  <item>com.lucid.alignment</item>
+  <item>com.lucid.calibration</item>
+  <item>org.codeaurora.snapcam</item>
+  <item>com.cloudminds.cit</item>
+  <item>com.cloudminds.camera</item>
+</preconfig>

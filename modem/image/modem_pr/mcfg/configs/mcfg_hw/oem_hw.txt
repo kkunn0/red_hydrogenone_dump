@@ -1,0 +1,1 @@
+mcfg_hw/generic/common/msm8998/fih/ss/mcfg_hw.mbn

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  BORQS Software Solutions Pvt Ltd. CONFIDENTIAL
+  ~ Copyright (c) 2012 All rights reserved.
+  ~
+  ~ The source code contained or described herein and all documents
+  ~ related to the source code ("Material") are owned by BORQS Software
+  ~ Solutions Pvt Ltd. No part of the Material may be used,copied,
+  ~ reproduced, modified, published, uploaded,posted, transmitted,
+  ~ distributed, or disclosed in any way without BORQS Software
+  ~ Solutions Pvt Ltd. prior written permission.
+  ~
+  ~ No license under any patent, copyright, trade secret or other
+  ~ intellectual property right is granted to or conferred upon you
+  ~ by disclosure or delivery of the Materials, either expressly, by
+  ~ implication, inducement, estoppel or otherwise. Any license
+  ~ under such intellectual property rights must be express and
+  ~ approved by BORQS Software Solutions Pvt Ltd. in writing.
+-->
+
+<!--
+This XML file declares which signature|privileged permissions should be granted to privileged
+applications on GMS or Google-branded devices.
+It allows additional grants on top of privapp-permissions-platform.xml
+
+Adding Master clear permissioin to carrier telephony
+-->
+
+<permissions>
+    <privapp-permissions package="com.borqs.carrier">
+        <permission name="android.permission.MASTER_CLEAR"/>
+        <permission name="android.permission.CARRIER_FILTER_SMS"/>
+    </privapp-permissions>
+</permissions>

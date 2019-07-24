@@ -1,0 +1,11 @@
+service bootanim /system/bin/bootanimation
+    class core animation
+    user graphics
+    group graphics audio
+    disabled
+    oneshot
+    writepid /dev/stune/top-app/tasks
+
+on property:init.svc.bootanim=running
+    start bootsound
+

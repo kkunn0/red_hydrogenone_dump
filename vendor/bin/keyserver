@@ -1,0 +1,91 @@
+#!/vendor/bin/sh
+
+function log()
+{
+  echo $1 > /dev/kmsg
+}
+
+function delete()
+{
+  rm -fr $1
+}
+function init()
+{
+  keypath="/ftd"
+}
+
+function install()
+{
+  local filename=`ls $1`
+  # local deviceid=$(basename $filename .xml)
+  local deviceid=$(basename $filename)
+  # LD_LIBRARY_PATH=/vendor/lib64/hw KmInstallKeybox $filename $deviceid true | tee -a $keypath/$deviceid.result
+  LD_LIBRARY_PATH=/vendor/lib64/hw KmInstallKeybox $filename $deviceid true | tee -a $keypath/result
+  chmod 0755 $keypath/result
+}
+
+function installKeybox()
+{
+  local count=`ls -lR $keypath/keybox.bin | wc -l`
+  if [ "$count" -eq "1" ]
+  then
+    StoreKeybox  $keypath/keybox.bin | tee -a $keypath/KeyboxResult
+    chmod 0755 $keypath/KeyboxResult
+    delete  $keypath/keybox.bin
+  fi
+
+  count=`ls -lR $keypath/KeyboxResult | wc -l`
+  if [ "$count" -eq "1" ]
+  then
+    local resfile=`ls $keypath/KeyboxResult`
+    while read line
+    do
+      if [ "$line" == "Installing keybox data on device succeeds!" ]
+      then
+        setprop ro.product.secure.keybox enable
+        break
+      fi
+    done < $resfile
+  else
+    setprop ro.product.secure.keybox disable
+  fi
+}
+
+
+function main()
+{
+  installKeybox
+
+  local count=`ls -lR $keypath/RED_HydrogenONE_* | wc -l`
+  if [ "$count" -eq "1" ]
+  then
+    install $keypath/RED_HydrogenONE_*
+    delete  $keypath/RED_HydrogenONE_*
+  fi
+
+  count=`ls -lR $keypath/result | wc -l`
+  if [ "$count" -eq "1" ]
+  then
+    local resfile=`ls $keypath/result`
+    while read line
+    do
+      if [ "$line" == "InstallKeybox is done!" ]
+      then
+        setprop ro.product.secure.keymaster enable
+        break
+      fi
+    done < $resfile
+  else
+    setprop ro.product.secure.keymaster disable
+  fi
+
+  if [[ -s $keypath/camera_cal0.bin && -s $keypath/camera_cal1.bin ]]; then
+    setprop ro.product.secure.camera.cal true
+  else
+    setprop ro.product.secure.camera.cal false
+  fi
+
+} &> /dev/null
+
+init
+main
